@@ -113,8 +113,7 @@ UI.prototype.mostrarResultado = (total,seguro) =>{
         `;
     const resultadoDiv = document.querySelector('#resultado');
 
-   
-    
+       
 
     // mostrar spinner
     const spinner = document.querySelector('#cargando');
@@ -177,7 +176,22 @@ function cotizarSeguro(e){
     // use prototype que va a cotizar
     ui.mostrarResultado(total, seguro);
 
+};
 
+const lista = document.querySelector('#listado')
 
-}
+fetch('./data.json')
+    .then( (res) => res.json())
+    .then( (data) => {
+
+        data.forEach((producto) => {
+            const li = document.createElement('li')
+            li.innerHTML = `
+                <h4>${producto.nombre}</h4>
+                <p>${producto.contenido}</p>
+                <hr/>
+            `
+            lista.append(li)
+        })
+    })
 
