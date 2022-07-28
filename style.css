@@ -1,6 +1,26 @@
 body {
     background-color: #a9a9a9; 
 }
+.Cot{
+  text-align: center;
+}
+.Marca{
+  margin: 5px;
+}
+.Año{
+  margin: 5px;
+}
+.Bot{
+ text-align: center;
+ font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #b5c5d6;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 40px;
+  cursor: pointer;
+}
 .btn.btn-raised.btn-primary {
     background-color: #90b1b5!important;
     font-size: 16px;
@@ -47,7 +67,7 @@ body {
     margin-bottom: 40px;
 }
 #resultado div {
-    border: 1px solid #26C6DA;
+    border: 1px solid #020202;
     text-align: center;
     padding: 0  0 20px 0;
 }
@@ -55,7 +75,7 @@ body {
     margin-bottom: 0;
 }
 #resultado div p.header {
-    background-color: #26C6DA;
+    background-color: #10141499;
     margin-bottom: 10px;
     color:white;
     padding: 10px;
@@ -72,7 +92,7 @@ body {
   }
   
   .spinner > div {
-    background-color: #26C6DA;
+    background-color:  #10141499;
     height: 100%;
     width: 6px;
     display: inline-block;
