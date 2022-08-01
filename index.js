@@ -1,3 +1,15 @@
+let usuario;
+let usuarioStorage = localStorage.getItem("user");
+
+if(usuarioStorage){
+  let message = `Bienvenido ${usuarioStorage}`;
+  alert(message);
+  usuario = usuarioStorage;
+}else{
+  alert("no estás en sesión");
+  user = prompt("Ingrese su nombre");
+  sessionStorage.setItem("user", user);
+}
 function Seguro(marca, year, tipo){
     this.marca = marca;
     this.year =  year;
