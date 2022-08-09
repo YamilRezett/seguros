@@ -1,25 +1,16 @@
-let usuario;
-let usuarioStorage = localStorage.getItem("user");
-
-if(usuarioStorage){
-  let message = `Bienvenido ${usuarioStorage}`;
-  alert(message);
-  usuario = usuarioStorage;
-}else{
-  alert("no estás en sesión");
-  user = prompt("Ingrese su nombre");
-  sessionStorage.setItem("user", user);
-}
 function Seguro(marca, year, tipo){
     this.marca = marca;
     this.year =  year;
     this.tipo = tipo;
-}
+
+   }
 
 Seguro.prototype.cotizarSeguro =  function(){
   
    let cantidad;
    const base = 2000;
+
+    
 
    switch(this.marca){
     case '1':
@@ -46,7 +37,8 @@ Seguro.prototype.cotizarSeguro =  function(){
    }
 
    return cantidad;
-}
+
+   }
 
 function UI(){  }
 
@@ -115,9 +107,7 @@ UI.prototype.mostrarResultado = (total,seguro) =>{
         `;
     const resultadoDiv = document.querySelector('#resultado');
 
-       
-
-    
+        
     const spinner = document.querySelector('#cargando');
     spinner.style.display = 'block';
     setTimeout(() => {
@@ -176,6 +166,9 @@ function cotizarSeguro(e){
 
     ui.mostrarResultado(total, seguro);
 
+    sessionStorage.setItem("seguro", JSON.stringify(seguro));
+    console.log(seguro);
+ 
 };
 
 const lista = document.querySelector('#listado')
@@ -194,4 +187,5 @@ fetch('./data.json')
             lista.append(li)
         })
     })
+
 
